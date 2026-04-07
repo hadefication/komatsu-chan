@@ -124,6 +124,7 @@ komatsu-chan initialized.
     Verbosity:     <value>
     Encouragement: <value>
     Sass:          <value>
+    Sarcasm:       <value>
 
   Autostart:   <enabled / skipped>
 

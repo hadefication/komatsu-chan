@@ -70,6 +70,7 @@ komatsu-chan has configurable personality traits, inspired by TARS from Interste
 | Verbosity | 40 | Terse ↔ Thorough |
 | Encouragement | 80 | Neutral ↔ Cheerleader |
 | Sass | 30 | Polite ↔ Snarky |
+| Sarcasm | 40 | Sincere ↔ Dripping with irony |
 
 Set during `/init` or change anytime with `/personality`. Traits are written as a natural language prompt into your `~/.claude/CLAUDE.md` — no numbers, just personality.
 
