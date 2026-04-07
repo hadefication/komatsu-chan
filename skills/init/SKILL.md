@@ -93,40 +93,7 @@ Only include fields the user actually provided beyond the name. The name is alwa
 
 Run the `/personality` skill to configure komatsu-chan's traits. This handles asking for values, generating the prompt, and writing to `~/.claude/CLAUDE.md`.
 
-### 7. Configure project registry
-
-Ask the user for directories where their projects live. These paths let `/rc <name>` resolve a project name to a full path without the user typing it out.
-
-```
-Where do your projects live?
-Enter directory paths (one per line, empty line to finish):
-
-  > ~/Herd
-  > ~/AI
-  >
-```
-
-Save to `~/.config/komatsu-chan/projects.json`:
-
-```bash
-mkdir -p ~/.config/komatsu-chan
-```
-
-```json
-{
-  "project_dirs": [
-    "/Users/glen/Herd",
-    "/Users/glen/AI"
-  ]
-}
-```
-
-- Expand `~` to `$HOME` before saving
-- Validate that each path exists
-- If a path doesn't exist, warn and skip it
-- If the user skips this step (empty input immediately), save an empty array
-
-### 8. Ask about autostart
+### 7. Ask about autostart
 
 Ask the user if they want Claude Code to auto-start on boot via LaunchAgent.
 
@@ -140,7 +107,7 @@ Ask the user if they want Claude Code to auto-start on boot via LaunchAgent.
   ```
 - If no, skip
 
-### 9. Report
+### 8. Report
 
 Show a summary of what was set up:
 
@@ -158,7 +125,6 @@ komatsu-chan initialized.
     Encouragement: <value>
     Sass:          <value>
 
-  Projects:    <list of registered dirs, or "none">
   Autostart:   <enabled / skipped>
 
   Available skills:

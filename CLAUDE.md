@@ -28,4 +28,3 @@ A Claude Code plugin — a loyal, resourceful assistant inspired by Komatsu from
 - Skills are prompt-based (SKILL.md) — Claude reads the instructions and executes them
 - Shell scripts in `bin/` handle complex operations that benefit from being standalone executables
 - The personality prompt lives in the user's `~/.claude/CLAUDE.md` under `## komatsu-chan`
-- Project registry lives in `~/.config/komatsu-chan/projects.json`

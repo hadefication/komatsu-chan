@@ -20,7 +20,6 @@ The init wizard will:
 - Check and install dependencies (tmux via Homebrew)
 - Get to know you (name required, role/stack/vibe optional)
 - Configure personality traits (TARS-style, 0–100)
-- Set up your project registry
 - Optionally enable auto-start on boot
 
 ## Skills
@@ -80,7 +79,6 @@ komatsu-chan is a collection of [Claude Code skills](https://docs.anthropic.com/
 Configuration lives in `~/.config/komatsu-chan/`:
 - `personality.json` — trait values
 - `user.json` — user profile
-- `projects.json` — registered project directories
 
 ## License
 
