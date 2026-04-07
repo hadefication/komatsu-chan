@@ -52,7 +52,44 @@ chmod +x "$PLUGIN_BIN"/*.sh
 mkdir -p ~/bin
 ```
 
-### 5. Configure personality
+### 5. Get to know the user (optional)
+
+Ask the user about themselves. Name is required, everything else is optional — they can skip with an empty response.
+
+```
+Let's get acquainted.
+
+  Name:   _          (required)
+  Role:   _          (optional — e.g., backend dev, student, designer)
+  Stack:  _          (optional — e.g., Laravel/PHP, React/TS, Python)
+  Vibe:   _          (optional — e.g., "pair programming", "just get it done", "teach me")
+```
+
+- **Name** — what to call them (required, keep asking until provided)
+- **Role** — what they do
+- **Stack** — what they mainly work with
+- **Vibe** — how they like to work
+
+Save to `~/.config/komatsu-chan/user.json`:
+
+```json
+{
+  "name": "Glen",
+  "role": "full-stack dev",
+  "stack": "Laravel, React",
+  "vibe": "just get it done"
+}
+```
+
+Include the user info in the `## komatsu-chan` section of `~/.claude/CLAUDE.md` when generating the personality prompt. Add a line like:
+
+```
+You're working with <name>, a <role> who works with <stack>. They prefer a <vibe> style of collaboration.
+```
+
+Only include fields the user actually provided beyond the name. The name is always included.
+
+### 6. Configure personality
 
 Run the `/personality` skill to configure komatsu-chan's traits. This handles asking for values, generating the prompt, and writing to `~/.claude/CLAUDE.md`.
 
