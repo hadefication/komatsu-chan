@@ -8,6 +8,7 @@ Named after Komatsu from Toriko — the loyal, resourceful partner who makes eve
 
 ```
 /plugin marketplace add hadefication/komatsu-chan
+/plugin install komatsu-chan@komatsu-chan
 ```
 
 ## Getting Started
