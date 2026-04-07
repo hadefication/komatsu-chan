@@ -1,6 +1,6 @@
 {
   "name": "komatsu-chan",
-  "description": "A friendly dev assistant plugin for Claude Code — remote control sessions, session naming, permission cycling, sleep prevention, and autostart.",
+  "description": "A friendly assistant plugin for Claude Code — with personality, remote control sessions, sleep prevention, and more.",
   "version": "0.1.0",
   "author": {
     "name": "Glen Bangkila",

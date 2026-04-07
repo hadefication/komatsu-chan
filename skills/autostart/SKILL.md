@@ -19,7 +19,7 @@ Set up Claude Code to automatically start in a tmux remote control session after
 
 ## How It Works
 
-A macOS LaunchAgent (`com.inggo.claude-autostart`) runs a shell script at login that:
+A macOS LaunchAgent (`com.komatsu-chan.claude-autostart`) runs a shell script at login that:
 
 1. Waits 30s for the system to settle
 2. Kills any stale `claude` tmux session (e.g., restored by tmux-continuum)
@@ -34,14 +34,16 @@ A macOS LaunchAgent (`com.inggo.claude-autostart`) runs a shell script at login 
 
 1. Copy the autostart script to `~/bin/`:
    ```bash
+   mkdir -p ~/bin
    cp "$(dirname "$0")/../bin/claude-autostart.sh" ~/bin/claude-autostart.sh
    chmod +x ~/bin/claude-autostart.sh
    ```
 
-2. Copy and load the LaunchAgent:
+2. Generate the plist from the template by replacing `__HOME__` with the user's home directory, then load it:
    ```bash
-   cp "$(dirname "$0")/../bin/com.inggo.claude-autostart.plist" ~/Library/LaunchAgents/
-   launchctl load ~/Library/LaunchAgents/com.inggo.claude-autostart.plist
+   mkdir -p ~/Library/LaunchAgents
+   sed "s|__HOME__|$HOME|g" "$(dirname "$0")/../bin/com.komatsu-chan.claude-autostart.plist" > ~/Library/LaunchAgents/com.komatsu-chan.claude-autostart.plist
+   launchctl load ~/Library/LaunchAgents/com.komatsu-chan.claude-autostart.plist
    ```
 
 3. Confirm the agent is loaded:
@@ -59,7 +61,7 @@ tmux has-session -t claude 2>/dev/null && echo "tmux session 'claude' is running
 ### For `stop` / `off`
 
 ```bash
-launchctl unload ~/Library/LaunchAgents/com.inggo.claude-autostart.plist
+launchctl unload ~/Library/LaunchAgents/com.komatsu-chan.claude-autostart.plist
 ```
 
 ## Output
@@ -68,7 +70,7 @@ After setup:
 ```
 Autostart installed.
   Script:       ~/bin/claude-autostart.sh
-  LaunchAgent:  ~/Library/LaunchAgents/com.inggo.claude-autostart.plist
+  LaunchAgent:  ~/Library/LaunchAgents/com.komatsu-chan.claude-autostart.plist
 
 Claude Code will start automatically on next login.
 ```

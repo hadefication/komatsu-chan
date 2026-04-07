@@ -71,7 +71,12 @@ bash ~/.claude/skills/rc/claude-rc.sh <project-dir>
 ```
 
 - If no name/dir was provided, pass `$PWD` (the current working directory)
-- If a name was provided, resolve it to a directory path first, then pass it
+- If a name was provided, resolve it to a directory path using the project registry:
+  1. Read `~/.config/komatsu-chan/projects.json` for registered project directories
+  2. Search each registered directory for a subdirectory matching the name
+  3. If found, pass the full path
+  4. If not found in the registry, check if it's an absolute path or relative to `$PWD`
+  5. If still not found, report the error
 
 The script handles:
 1. Building the tmux session name (`claude-rc-<dir>`) and Claude session name (`<user>@<machine>-<dir>-<date>-<time>`)

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.inggo.claude-autostart</string>
+    <string>com.komatsu-chan.claude-autostart</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/inggo/bin/claude-autostart.sh</string>
+        <string>__HOME__/bin/claude-autostart.sh</string>
     </array>
     <key>WorkingDirectory</key>
-    <string>/Users/inggo</string>
+    <string>__HOME__</string>
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
