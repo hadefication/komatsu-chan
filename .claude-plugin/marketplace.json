@@ -1,0 +1,20 @@
+{
+  "name": "komatsu-chan",
+  "owner": {
+    "name": "Glen Bangkila"
+  },
+  "plugins": [
+    {
+      "name": "komatsu-chan",
+      "source": {
+        "source": "github",
+        "repo": "hadefication/komatsu-chan"
+      },
+      "description": "A friendly assistant plugin for Claude Code",
+      "version": "0.1.0",
+      "author": {
+        "name": "Glen Bangkila"
+      }
+    }
+  ]
+}
