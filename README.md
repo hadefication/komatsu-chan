@@ -2,7 +2,13 @@
 
 A friendly assistant plugin for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Named after Komatsu from Toriko — the loyal, resourceful partner who makes everything work.
+Named after Komatsu from Toriko — the loyal, resourceful partner who makes everything work through skill and dedication, not brute force.
+
+## Install
+
+```
+/plugin marketplace add hadefication/komatsu-chan
+```
 
 ## Getting Started
 
@@ -12,7 +18,8 @@ Named after Komatsu from Toriko — the loyal, resourceful partner who makes eve
 
 The init wizard will:
 - Check and install dependencies (tmux via Homebrew)
-- Configure personality traits (TARS-style)
+- Get to know you (name required, role/stack/vibe optional)
+- Configure personality traits (TARS-style, 0–100)
 - Set up your project registry
 - Optionally enable auto-start on boot
 
@@ -40,21 +47,21 @@ The init wizard will:
 ## Usage
 
 ```
-/komatsu-chan:rc                  # start rc session for current directory
-/komatsu-chan:rc event-platform   # start rc session for a specific project
-/komatsu-chan:rc stop             # stop all rc sessions
-/komatsu-chan:rcn                 # generate a session name
-/komatsu-chan:rcp auto            # set permission mode to auto
-/komatsu-chan:staywoke            # prevent sleep
-/komatsu-chan:staywoke 30         # prevent sleep for 30 minutes
-/komatsu-chan:status              # see what's running
+/komatsu-chan:rc                    # start rc session for current directory
+/komatsu-chan:rc event-platform     # start rc session for a specific project
+/komatsu-chan:rc stop               # stop all rc sessions
+/komatsu-chan:rcn                   # generate a session name
+/komatsu-chan:rcp auto              # set permission mode to auto
+/komatsu-chan:staywoke              # prevent sleep
+/komatsu-chan:staywoke 30           # prevent sleep for 30 minutes
+/komatsu-chan:status                # see what's running
 /komatsu-chan:personality humor 90  # adjust a trait
-/komatsu-chan:whoami              # meet your assistant
+/komatsu-chan:whoami                # meet your assistant
 ```
 
 ## Personality
 
-komatsu-chan has configurable personality traits:
+komatsu-chan has configurable personality traits, inspired by TARS from Interstellar:
 
 | Trait | Default | What it controls |
 |-------|---------|-----------------|
@@ -64,7 +71,16 @@ komatsu-chan has configurable personality traits:
 | Encouragement | 80 | Neutral ↔ Cheerleader |
 | Sass | 30 | Polite ↔ Snarky |
 
-Set during `/init` or change anytime with `/personality`.
+Set during `/init` or change anytime with `/personality`. Traits are written as a natural language prompt into your `~/.claude/CLAUDE.md` — no numbers, just personality.
+
+## How It Works
+
+komatsu-chan is a collection of [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code) — prompt-based instructions that Claude reads and executes. Shell scripts in `bin/` handle the heavier operations (tmux session management, process trees, etc.).
+
+Configuration lives in `~/.config/komatsu-chan/`:
+- `personality.json` — trait values
+- `user.json` — user profile
+- `projects.json` — registered project directories
 
 ## License
 
