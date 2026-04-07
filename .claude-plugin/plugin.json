@@ -1,0 +1,11 @@
+{
+  "name": "komatsu-chan",
+  "description": "A friendly dev assistant plugin for Claude Code — remote control sessions, session naming, permission cycling, sleep prevention, and autostart.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Glen Bangkila",
+    "url": "https://github.com/inggo"
+  },
+  "homepage": "https://github.com/inggo/komatsu-chan",
+  "license": "MIT"
+}
