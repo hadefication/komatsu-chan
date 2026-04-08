@@ -22,6 +22,16 @@ A Claude Code plugin — a loyal, resourceful assistant inspired by Komatsu from
 | `/personality` | Reconfigure personality traits |
 | `/whoami` | komatsu-chan introduces itself |
 | `/update` | Pull latest plugin changes |
+| `/handoff` | Export session summary for pickup in a new session |
+| `/journal` | Daily dev journal with timestamped entries |
+| `/recap` | Summarize recent git activity — "where was I?" |
+| `/ports` | Show what's running on which ports |
+| `/cleanup` | Clean stale processes, caches, docker, temp files |
+| `/health` | System health check — disk, memory, CPU, services |
+| `/notify` | macOS notification when a task finishes |
+| `/briefing` | Morning briefing — PRs, commits, sessions |
+| `/mood` | Set session mood (lighter than /personality) |
+| `/quote` | Random motivational or sarcastic quote |
 
 ## Conventions
 

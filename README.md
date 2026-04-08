@@ -37,6 +37,16 @@ The init wizard will:
 | `/personality` | Reconfigure personality traits |
 | `/whoami` | komatsu-chan introduces itself |
 | `/update` | Pull latest plugin changes |
+| `/handoff` | Export session summary for pickup in a new session |
+| `/journal` | Daily dev journal with timestamped entries |
+| `/recap` | Summarize recent git activity — "where was I?" |
+| `/ports` | Show what's running on which ports |
+| `/cleanup` | Clean stale processes, caches, docker, temp files |
+| `/health` | System health check — disk, memory, CPU, services |
+| `/notify` | macOS notification when a task finishes |
+| `/briefing` | Morning briefing — PRs, commits, sessions |
+| `/mood` | Set session mood (lighter than /personality) |
+| `/quote` | Random motivational or sarcastic quote |
 
 ## Requirements
 
@@ -57,6 +67,16 @@ The init wizard will:
 /komatsu-chan:status                # see what's running
 /komatsu-chan:personality humor 90  # adjust a trait
 /komatsu-chan:whoami                # meet your assistant
+/komatsu-chan:handoff               # save session for later
+/komatsu-chan:journal fixed auth    # jot a dev log entry
+/komatsu-chan:recap                 # "where was I?"
+/komatsu-chan:ports                 # see what's listening
+/komatsu-chan:cleanup dry-run       # see what can be cleaned
+/komatsu-chan:health                # system health check
+/komatsu-chan:notify tests done     # macOS notification
+/komatsu-chan:briefing              # morning overview
+/komatsu-chan:mood snarky           # set session mood
+/komatsu-chan:quote dev             # dev wisdom
 ```
 
 ## Personality
@@ -81,6 +101,9 @@ komatsu-chan is a collection of [Claude Code skills](https://docs.anthropic.com/
 Configuration lives in `~/.config/komatsu-chan/`:
 - `personality.json` — trait values
 - `user.json` — user profile
+- `mood.txt` — current session mood
+- `journal/` — daily dev journal entries
+- `handoffs/` — session handoff summaries
 
 ## License
 
